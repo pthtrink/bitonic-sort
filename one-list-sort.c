@@ -71,10 +71,6 @@ int main(int argc, char *argv[]) {
     
     MPI_Gather(lista1, tam1, MPI_INT, lista1, tam1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    if(ranque == 0) {
-        bitonicSort(lista1, 0, TAMANHO_DA_LISTA1, 1);
-    }
-
     MPI_Barrier(MPI_COMM_WORLD);
     tempo_final = MPI_Wtime();
     if(ranque == 0) {
